@@ -3,7 +3,7 @@
 A simple full-stack online education platform built with Next.js and SQLite. It is intentionally small, readable, and suitable for demo videos or beginner-friendly testing.
 
 ## Features
-
+  
 - Student registration and login
 - Admin login with a default seeded account
 - Password hashing with bcrypt
