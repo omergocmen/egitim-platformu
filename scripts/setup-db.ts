@@ -1,3 +1,3 @@
-import "@/lib/db";
+import { dbPath } from "@/lib/db";
 
-console.log("SQLite database is ready at data/education.db");
+console.log(`SQLite database is ready at ${dbPath}`);

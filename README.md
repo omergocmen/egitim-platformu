@@ -12,6 +12,7 @@ A simple full-stack online education platform built with Next.js and SQLite. It 
 - Course, section, resource, comment, and admin reply workflows
 - Embedded YouTube lessons with URL validation
 - SQLite database stored locally in `data/education.db`
+- Vercel demo fallback stores SQLite in `/tmp/education.db`
 
 ## Default Admin
 
@@ -66,6 +67,24 @@ Seed data includes:
 - one sample course
 - two sample sections with YouTube videos
 - one sample resource
+
+## Deploying to Vercel
+
+This project can boot on Vercel for demo purposes. On Vercel, the app uses `/tmp/education.db` because the normal project filesystem is not writable at runtime.
+
+Important: `/tmp` is temporary in serverless deployments. Data can disappear between cold starts or deployments. For a real hosted app, use a persistent SQLite-compatible service such as Turso/libSQL and replace `lib/db.ts` with that client.
+
+Recommended Vercel environment variables:
+
+```text
+AUTH_SECRET=use-a-long-random-secret
+```
+
+Optional local override:
+
+```text
+SQLITE_PATH=/absolute/path/to/education.db
+```
 
 ## Main Pages
 
