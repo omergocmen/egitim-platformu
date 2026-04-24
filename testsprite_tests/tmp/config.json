@@ -1,0 +1,23 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000/login",
+  "loginUser": "admin@example.com ",
+  "loginPassword": "admin123",
+  "executionArgs": {
+    "projectName": "New project 2",
+    "projectPath": "C:\\Users\\Ömer\\Documents\\New project 2",
+    "testIds": [
+      "TC007",
+      "TC011",
+      "TC015"
+    ],
+    "additionalInstruction": "Re-run only the previously failing or blocked tests after fixes. Use admin@example.com / admin123 for admin login. Prefer data-testid=create-course-button or /admin/courses/new for course creation. For public section switching, choose a course card that has multiple lessons/sections, such as the seeded Web Development Foundations course.",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-ajZIm_liuUJQFKfjTXjq7W6qYa8RcgiK9BLD8pU1TYxgZ-dwF2bBUwTsRLFzlMFwZKfKOB-Bp9ezOyIbTK59LBkAS14tC-qNR5psXzSCQJd7foOrb8asM235FKBd5bO3Xa0"
+    }
+  },
+  "serverPort": 49212
+}

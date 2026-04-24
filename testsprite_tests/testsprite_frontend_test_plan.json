@@ -1,0 +1,872 @@
+[
+  {
+    "id": "TC001",
+    "title": "Create a student account and land on the student dashboard",
+    "description": "Verifies a new student can register successfully and is automatically signed in and redirected to the student dashboard.",
+    "category": "Student Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /register"
+      },
+      {
+        "type": "action",
+        "description": "Fill New Student into the name field"
+      },
+      {
+        "type": "action",
+        "description": "Fill student+new@example.com into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill ValidPass123! into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the create account form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the student dashboard"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Admin can log in and reach the admin dashboard",
+    "description": "Verifies an admin can log in and is redirected to the admin dashboard successfully.",
+    "category": "Admin Comment Moderation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the admin dashboard"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Student can log in and reach the student dashboard",
+    "description": "Verifies an existing student can log in and is redirected to the student dashboard.",
+    "category": "Login and Logout",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the student dashboard"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Admin can log in and land on the admin dashboard",
+    "description": "Verifies an admin can log in and is redirected to the admin dashboard.",
+    "category": "Admin Course Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the admin dashboard"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Browse public catalog and open a course detail",
+    "description": "Verifies a public visitor can browse the course catalog and open a course detail page that displays sections, an embedded lesson video, resources, and comments.",
+    "category": "Public Course Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /courses"
+      },
+      {
+        "type": "action",
+        "description": "Click a course card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the course detail page displays a list of sections"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an embedded lesson video is displayed along with resources and comments"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Student can log out and return to public views",
+    "description": "Verifies a signed-in user can log out and the app shows non-authenticated public views afterward.",
+    "category": "Login and Logout",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the logout control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the site shows non-authenticated public views"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Create a new course with a valid YouTube section and resource",
+    "description": "Verifies an admin can create a course with at least one section using a valid YouTube URL and at least one resource, and the new course appears in the admin list.",
+    "category": "Admin Course Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to manage courses"
+      },
+      {
+        "type": "action",
+        "description": "Click the action to create a new course"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Automation Course A\" into the course title field"
+      },
+      {
+        "type": "action",
+        "description": "Add a new section"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Intro\" into the section title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill a valid YouTube URL into the section video URL field"
+      },
+      {
+        "type": "action",
+        "description": "Add a new resource"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Resource 1\" into the resource title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"https://example.com/resource-1\" into the resource URL field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the course form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new course appears in the admin course list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Post a comment as a logged-in student",
+    "description": "Verifies a student can log in, open a course, submit a comment, and see it appear in the discussion thread.",
+    "category": "Student Commenting",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view the course catalog"
+      },
+      {
+        "type": "action",
+        "description": "Click a course card"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"This is a test comment\" into the comment field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the new comment"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the new comment appears in the discussion thread"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Signed-in student sees course list and comment count on dashboard",
+    "description": "Verifies the student dashboard displays available courses and the student's comment count.",
+    "category": "Student Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify available courses are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the student's comment count is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Admin can reply to a student comment from the moderation list",
+    "description": "Verifies an admin can enter a reply for a comment and the reply is shown as associated with that comment in the moderation view.",
+    "category": "Admin Comment Moderation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/comments"
+      },
+      {
+        "type": "action",
+        "description": "Type a reply into the reply input for a comment"
+      },
+      {
+        "type": "action",
+        "description": "Save the reply"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the admin reply is displayed as associated with that comment"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Switch sections updates the embedded lesson content",
+    "description": "Verifies a public visitor can switch between course sections and the embedded lesson video/content updates to match the selected section.",
+    "category": "Public Course Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /courses"
+      },
+      {
+        "type": "action",
+        "description": "Click a course card"
+      },
+      {
+        "type": "action",
+        "description": "Click a different section in the section list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected section's embedded lesson video is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected section's content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Student can open a course detail view from the dashboard",
+    "description": "Verifies a student can open a course from the dashboard and reach its course detail view.",
+    "category": "Student Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the password field with {{LOGIN_PASSWORD}}"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Select a course from the dashboard course list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the course detail view is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Edit an existing course and section with a valid YouTube URL",
+    "description": "Verifies an admin can create a course, edit its details and section video URL, save changes, and see the updated course reflected in the admin list.",
+    "category": "Admin Course Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to manage courses"
+      },
+      {
+        "type": "action",
+        "description": "Click the action to create a new course"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Automation Course B\" into the course title field"
+      },
+      {
+        "type": "action",
+        "description": "Add a new section"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Section 1\" into the section title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill a valid YouTube URL into the section video URL field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the course form"
+      },
+      {
+        "type": "action",
+        "description": "Select the newly created course from the list"
+      },
+      {
+        "type": "action",
+        "description": "Open the edit screen"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Automation Course B Updated\" into the course title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill a different valid YouTube URL into the section video URL field"
+      },
+      {
+        "type": "action",
+        "description": "Save changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the updated course is shown in the admin course list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Admin can delete a comment from the moderation list",
+    "description": "Verifies an admin can delete a comment and it is removed from the moderation list.",
+    "category": "Admin Comment Moderation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/comments"
+      },
+      {
+        "type": "action",
+        "description": "Delete a comment from the moderation list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the deleted comment is no longer displayed in the moderation list"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Delete a course removes it from the admin list",
+    "description": "Verifies an admin can create a course and then delete it, and the course no longer appears in the admin course list.",
+    "category": "Admin Course Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to manage courses"
+      },
+      {
+        "type": "action",
+        "description": "Click the action to create a new course"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Automation Course C\" into the course title field"
+      },
+      {
+        "type": "action",
+        "description": "Add a new section"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Section 1\" into the section title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill a valid YouTube URL into the section video URL field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the course form"
+      },
+      {
+        "type": "action",
+        "description": "Select the newly created course from the list"
+      },
+      {
+        "type": "action",
+        "description": "Delete the course"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the course is removed from the admin course list"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC016",
+    "title": "Block registration when required fields are missing or invalid",
+    "description": "Verifies a student cannot register with missing or invalid required inputs and sees validation feedback.",
+    "category": "Student Registration",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /register"
+      },
+      {
+        "type": "action",
+        "description": "Fill Invalid User into the name field"
+      },
+      {
+        "type": "action",
+        "description": "Fill invalid-email into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill short into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the create account form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC017",
+    "title": "Empty comment is blocked with validation",
+    "description": "Verifies a student cannot submit an empty comment and a validation error is shown.",
+    "category": "Student Commenting",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view the course catalog"
+      },
+      {
+        "type": "action",
+        "description": "Click a course card"
+      },
+      {
+        "type": "action",
+        "description": "Submit the new comment"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a comment validation error is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no new comment is added to the discussion thread"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC018",
+    "title": "Admin reply form blocks saving an empty reply",
+    "description": "Verifies the moderation UI prevents submitting an empty admin reply and shows a validation error.",
+    "category": "Admin Comment Moderation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/comments"
+      },
+      {
+        "type": "action",
+        "description": "Clear the reply input for a comment so it is empty"
+      },
+      {
+        "type": "action",
+        "description": "Save the reply"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a reply validation error is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC019",
+    "title": "Course creation blocks missing title or invalid YouTube URL",
+    "description": "Verifies the admin course form enforces validation by preventing submission when the title is missing or a section has an invalid YouTube URL.",
+    "category": "Admin Course Management",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to manage courses"
+      },
+      {
+        "type": "action",
+        "description": "Click the action to create a new course"
+      },
+      {
+        "type": "action",
+        "description": "Add a new section"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Section Invalid\" into the section title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"not-a-youtube-url\" into the section video URL field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the course form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error is visible for missing required fields or invalid YouTube URL"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the course is not created and does not appear in the admin course list"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC020",
+    "title": "Show validation when logging in without required fields",
+    "description": "Verifies login cannot be submitted with missing required inputs and shows validation feedback.",
+    "category": "Login and Logout",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill in the email field with {{LOGIN_USER}}"
+      },
+      {
+        "type": "action",
+        "description": "Fill  into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a validation error is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC021",
+    "title": "Public course detail renders safely when optional content is missing",
+    "description": "Verifies a public visitor can open a course detail page and the UI renders an appropriate empty state when sections, resources, or comments are absent.",
+    "category": "Public Course Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /courses"
+      },
+      {
+        "type": "action",
+        "description": "Click a course card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the course detail page renders without broken UI and shows empty-state messaging where content is missing"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the comments area is visible and usable for viewing even when there are no comments"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC022",
+    "title": "Admin comments page renders an empty state when there are no comments",
+    "description": "Verifies the admin comments moderation page shows an empty state when there are no student comments to moderate.",
+    "category": "Admin Comment Moderation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the login form"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /admin/comments"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty state is displayed for no comments"
+      }
+    ],
+    "priority": "Medium"
+  }
+]
